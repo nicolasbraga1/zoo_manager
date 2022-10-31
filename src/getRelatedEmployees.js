@@ -1,8 +1,10 @@
 const data = require('../data/zoo_data');
 
-function isManager(id) {
-  // seu código aqui
-}
+// const {employees} = data;
+
+const isManager = (id) => {
+  // if (id === stephanieId || id === )
+};
 
 function getRelatedEmployees(managerId) {
   // seu código aqui
