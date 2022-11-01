@@ -9,9 +9,10 @@ function office(play) {
 }
 
 const exhibi = (play) => {
-  const places = data.species.reduce((attractions, { name, availability }) => (
-    availability.includes(play) ? [...attractions, name] : attractions
-  ), []);
+  const places = data.species
+    .reduce((attractions, { name, availability }) => (
+      availability.includes(play) ? [...attractions, name] : attractions
+    ), []);
   return places.length === 0 ? 'The zoo will be closed!' : places;
 };
 
@@ -22,8 +23,8 @@ const schedules = (play) => ({
   },
 });
 
-const weekCronogram = () => (
-  days.reduce((schedule, play) => (
+const weekCronogram = () => (days
+  .reduce((schedule, play) => (
     {
       ...schedule,
       ...schedules(play),
@@ -31,8 +32,8 @@ const weekCronogram = () => (
   ), {})
 );
 
-const animas = (animalName) =>
-  data.species.find(({ name }) => name === animalName).availability;
+const animas = (animalName) => data.species
+  .find(({ name }) => name === animalName).availability;
 
 function getSchedule(scheduleTarget) {
   const animals = data.species.map((specie) => specie.name);
